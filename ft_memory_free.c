@@ -6,27 +6,11 @@
 /*   By: alvalope <alvalope@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:14:19 by alvalope          #+#    #+#             */
-/*   Updated: 2023/05/22 13:48:58 by alvalope         ###   ########.fr       */
+/*   Updated: 2023/05/23 13:40:31 by alvalope         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pipex.h"
-
-/*void	ft_free_lines(t_pipex *p)
-{
-	int	i;
-
-	i = 0;
-	if (p->archive_lines)
-	{
-		while (p->archive_lines[i])
-		{
-			free(p->archive_lines[i]);
-			i++;
-		}
-		free(p->archive_lines);
-	}
-}*/
 
 void	ft_free_all(t_pipex *p)
 {

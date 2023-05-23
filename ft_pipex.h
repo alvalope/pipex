@@ -6,7 +6,7 @@
 /*   By: alvalope <alvalope@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:52:45 by alvalope          #+#    #+#             */
-/*   Updated: 2023/05/22 13:39:18 by alvalope         ###   ########.fr       */
+/*   Updated: 2023/05/23 13:43:03 by alvalope         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,20 @@ typedef struct pipex
 }	t_pipex;
 
 int		ft_count_lines(int file);
-int		ft_read_file_p(char *archive);
+int		ft_verify_file(char *archive);
 
-//void	ft_free_lines(t_pipex *p);
 void	ft_free_all(t_pipex *p);
 void	ft_free_path_com(t_pipex *p, int n);
 void	ft_free_com(char **com);
 
-
 int		ft_check_first_command(t_pipex *p, char *command);
 int		ft_check_second_command(t_pipex *p, char *command);
+
+int		ft_exe_first_command(t_pipex *p);
+int		ft_exe_second_command(t_pipex *p);
+int		ft_do_first_command(t_pipex *p, char *fl_1, int fd[2]);
+int		ft_do_second_command(t_pipex *p, char *fl_2, int fd[2]);
+int		ft_do_pipex(t_pipex *p, char *fl_1, char *fl_2);
 
 int		main(int argc, char *argv[]);
 
