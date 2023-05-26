@@ -6,7 +6,7 @@
 #    By: alvalope <alvalope@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 13:43:51 by alvalope          #+#    #+#              #
-#    Updated: 2023/05/25 11:10:36 by alvalope         ###   ########.fr        #
+#    Updated: 2023/05/26 13:08:52 by alvalope         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,12 +37,12 @@ all: $(NAME)
 
 $(OBJS): $(SRCS)
 	@echo "Compilando archivos de pipex..."
-	$(CC) $(CFLAGS) -c $(SRCS)
+	@$(CC) $(CFLAGS) -c $(SRCS)
 
 $(NAME): $(OBJS) $(LIBFT) $(HEADER)
 	@echo "Generando libreria pipex..."
-	$(LIB) $(PIPEX) $(OBJS)
-	$(CC) $(CFLAGS) $(PIPEX) $(LIBFT) -o $(NAME)
+	@$(LIB) $(PIPEX) $(OBJS)
+	@$(CC) $(CFLAGS) $(PIPEX) $(LIBFT) -o $(NAME)
 	@echo "\033[0;32mPROCESO TERMINADO.\033[0m"
 
 $(LIBFT):
@@ -52,11 +52,13 @@ clean:
 	@echo "\033[0;31mBorrando archivos generados en la compilacion...\033[0m"
 	@make -C $(LIBFT_PATH) clean
 	@$(RM) $(OBJS)
+	@echo "\033[0;33mLIMPIEZA TERMINADA.\033[0m"
 
 fclean: clean
 	@echo "\033[0;31mBorrando librerias generadas...\033[0m"
 	@make -C $(LIBFT_PATH) libclean
 	@$(RM) $(NAME) $(PIPEX)
+	@echo "\033[0;33mLIMPIEZA TOTAL TERMINADA.\033[0m"
 
 re: fclean all
 
