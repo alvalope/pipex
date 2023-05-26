@@ -6,37 +6,24 @@
 /*   By: alvalope <alvalope@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 21:12:12 by alvalope          #+#    #+#             */
-/*   Updated: 2023/05/23 13:59:18 by alvalope         ###   ########.fr       */
+/*   Updated: 2023/05/26 09:43:46 by alvalope         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pipex.h"
 
-int	ft_count_lines(int file)
-{
-	int		i;
-	char	*line;
-
-	i = 0;
-	line = ft_get_next_line(file);
-	while (line)
-	{
-		i++;
-		free(line);
-		line = ft_get_next_line(file);
-	}
-	return (i);
-}
-
 int	ft_verify_file(char *archive)
 {
-	if (access(archive, F_OK) == -1)
-	{
-		ft_printf("No existe el archivo %s\n", archive);
-		return (0);
-	}
+	int	file;
+
+	file = open (archive, O_RDONLY);
+	if (file == -1)
+		file = -1;//
+	return (1);
+	/*if (access(archive, F_OK) == -1)
+		return (1);//exit(EXIT_FAILURE);
 	else
-		return (1);
+		return (1);*/
 }
 
 void	ft_free_all(t_pipex *p)

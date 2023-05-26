@@ -6,7 +6,7 @@
 /*   By: alvalope <alvalope@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:52:45 by alvalope          #+#    #+#             */
-/*   Updated: 2023/05/23 13:58:55 by alvalope         ###   ########.fr       */
+/*   Updated: 2023/05/26 09:48:43 by alvalope         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ typedef struct pipex
 	char	**args2;
 }	t_pipex;
 
-int		ft_count_lines(int file);
 int		ft_verify_file(char *archive);
 void	ft_free_all(t_pipex *p);
 void	ft_free_path_com(t_pipex *p, int n);
+
+char	**ft_split_quote(char const *s, char c);
 
 int		ft_check_first_command(t_pipex *p, char *command);
 int		ft_check_second_command(t_pipex *p, char *command);
